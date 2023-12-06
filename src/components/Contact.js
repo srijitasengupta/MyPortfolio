@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChipIcon } from "@heroicons/react/solid";
 
 const Contact = () => {
 
@@ -7,17 +6,7 @@ const Contact = () => {
     const [email, setEmail] = React.useState("");
     const [message, setMessage] = React.useState("");
 
-    const handleSubmit = e => {
-        // fetch("/", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //   body: encode({ "form-name": "contact", ...this.form })
-        // })
-        //   .then(() => alert("Success!"))
-        //   .catch(error => alert(error));
-  
-        // e.preventDefault();
-      };
+    console.log(name,email,message);
 
     return (
         <div id="contact" className="min-h-screen bg-no-repeat bg-cover bg-[url('https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&w=600')]">
