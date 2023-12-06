@@ -1,12 +1,37 @@
 import React from 'react';
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
 const Contact = () => {
 
-    const [name, setName] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [message, setMessage] = React.useState("");
+    // const [name, setName] = React.useState("");
+    // const [email, setEmail] = React.useState("");
+    // const [message, setMessage] = React.useState("");
+    // constructor(props) {
+    //   super(props);
+      const[state,setState] = React.useState({ name: "", email: "", message: "" });
+    // }
 
-    console.log(name,email,message);
+    /* Here’s the juicy bit for posting the form submission */
+
+    const handleSubmit = e => {
+        console.log(state)
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...state })
+      })
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
+
+      e.preventDefault();
+    };
+
+    const handleChange = e => setState(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
 
     return (
         <div id="contact" className="min-h-screen bg-no-repeat bg-cover bg-[url('https://images.pexels.com/photos/2341290/pexels-photo-2341290.jpeg?auto=compress&cs=tinysrgb&w=600')]">
@@ -25,8 +50,7 @@ const Contact = () => {
             <div className='px-20'>
             <div className=' bg-stone-800 rounded-2xl flex flex-wrap lg:w-1/2 mx-auto sm:mb-2 -mx-2 items-center text-center p-10'>
                 <form
-                    name="contact"
-                    method='POST'
+                    onSubmit={handleSubmit}
                     className="flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 items-center text-center">
                     <p className="leading-relaxed mb-5 text-lg text-slate-500">
                     Feel free to Contact me by submitting the form below
@@ -41,7 +65,7 @@ const Contact = () => {
                             id="name"
                             name="name"
                             className="w-full bg-gray-900 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                            onChange={(event) => setName(event.target.value)}
+                            value={state.name} onChange={handleChange}
                         />
                     </div>
                     <div className="relative mb-4">
@@ -53,7 +77,7 @@ const Contact = () => {
                             id="email"
                             name="email"
                             className="w-full bg-gray-900 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                            onChange={(event) =>setEmail(event.target.value)}
+                            value={state.email} onChange={handleChange}
                         />
                     </div>
                     <div className="relative mb-4">
@@ -66,7 +90,7 @@ const Contact = () => {
                             id="message"
                             name="message"
                             className="w-full bg-gray-900 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                            onChange={(event) => setMessage(event.target.value)}
+                            value={state.message} onChange={handleChange}
                         />
                     </div>
                     <button
