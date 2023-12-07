@@ -12,16 +12,19 @@ const About = () => {
             </div>
             <div className='md:border-solid md:border-2 md:border-stone-500 md:shadow-lg md:shadow-stone-500 text-white md:flex md:justify-between md:mx-80 md:px-28 md:p-10 px-10 mx-20 rounded-2xl'>
                 <div className='border-solid border-2 border-stone-500 shadow-lg shadow-stone-700 md:shadow-none mb-4 rounded-xl md:mb-0 md:mr-4 md:w-1/3 text-center md:border-0 md:border-solid py-4 md:py-0'>
-                    <p className='text-lg md:text-3xl'>150+</p>
-                    <p>Projects Solved</p>
+                    <p className='text-lg md:text-3xl'>300+</p>
+                    <p>Problems Solved</p>
+                    <p>Across GFG and Leetcode</p>
                 </div>
                 <div className='border-solid border-2 border-stone-500 shadow-lg shadow-stone-700 md:shadow-none rounded-xl mb-4 md:mb-0 md:mx-4 md:w-1/3 text-center md:border-0 md:border-solid py-4 md:py-0'>
-                    <p className='text-lg md:text-3xl'>150+</p>
-                    <p>Projects Solved</p>
+                    <p className='text-lg md:text-3xl'>10+</p>
+                    <p>Professional Projects</p>
+                    <p>Successfully Deployed</p>
                 </div>
                 <div className='border-solid border-2 border-stone-500 shadow-lg shadow-stone-700 md:shadow-none rounded-xl md:w-1/3 text-center md:border-0 md:border-solid py-4 md:py-0'>
-                    <p className='text-lg md:text-3xl'>150+</p>
-                    <p>Projects Solved</p>
+                    <p className='text-lg md:text-3xl'>11+</p>
+                    <p>Technological Skills</p>
+                    <p>Mastered and Applied</p>
                 </div>
             </div>
             <div className='text-center my-20'>

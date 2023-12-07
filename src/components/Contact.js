@@ -47,7 +47,7 @@ const Contact = () => {
                 <br></br>
                 <div className='w-8 border-t-4 top-0 border-stone-900 shadow-lg'></div>
             </div>
-            <div className='px-18'>
+            <div className='px-20'>
             <div className=' bg-stone-800 rounded-2xl flex flex-wrap lg:w-1/2 mx-auto sm:mb-2 -mx-2 items-center text-center p-10'>
                 <form
                     onSubmit={handleSubmit}
