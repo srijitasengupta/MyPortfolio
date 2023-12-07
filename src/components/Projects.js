@@ -1,7 +1,6 @@
 import React from 'react'
 import { CodeIcon, BadgeCheckIcon } from "@heroicons/react/solid";
 import { projects } from './ProjectsData';
-import socialMediaImg from '../images/socialMedia.jpg';
 const Projects = () => {
 
     const [showList, setShowList] = React.useState(Array(projects.length).fill(false));
@@ -34,9 +33,9 @@ const Projects = () => {
             <div className='container lg:w-4/5 h-full sm:mx-auto sm:mb-2 -mx-2 items-center text-center p-10 rounded-2xl'>
                 {projects.map((project, i) => (
                     <div key={i} className='container lg:w-full h-full bg-stone-800 hover:shadow-lg hover:shadow-violet-400 sm:mx-auto mb-5 -mx-2 items-center text-center p-10 rounded-2xl'>
-                        <div className='md:flex h-full'>
+                        <div className='md:flex h-full space-x-4'>
                             <div className="flex items-center justify-center">
-                                <img className='w-42 h-32 md:w-92 md:h-72' src={socialMediaImg} alt="" />
+                                <img className='w-42 h-32 md:w-92 md:h-72 object-cover' src={project.Img} alt="" />
                             </div>
                             <br></br>
                             <div>
